@@ -1,17 +1,4 @@
 <?php
-	//修改默认标签云
-	function zti_tag_cloud_filter($args) {
-		$args = array(
-		"largest" => "10",
-		"smallest" => "10",
-		"number" => "30",
-		"orderby" => "count",
-		"order" => "DESC",
-		"show_count" => 1
-		);
-		return $args;
-		}
-	add_filter("widget_tag_cloud_args", "zti_tag_cloud_filter");
 
 	//输出指定分类下的所有标签
 	function zti_category_tags(){

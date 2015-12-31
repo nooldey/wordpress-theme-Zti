@@ -565,6 +565,7 @@ blockquote{
     display: inline-block;
     padding: 3px 5px;
     margin: 3px 1px;
+    font-size: 13px!important;
 }
 .widget_recent_entries ul li{
     border-bottom: 1px solid #E7E7E7;
