@@ -66,7 +66,8 @@ class ZtiAnalyticsWidget extends WP_Widget{
 		$title = apply_filters('widgets_title',$instance['title']);
 
 		$content = $before_widget;
-		if ($title) $content .= $before_title.$title.$after_title;
+		if ($title) 
+			$content .= $before_title.$title.$after_title;
 		$content .= '<aside class="WidgetAnaly"><ul>';
 		
 		foreach ($data as $key) {
@@ -132,7 +133,7 @@ class ZtiAnalyticsWidget extends WP_Widget{
 /*批量注册小工具*/
 function zti_add_widgets(){
 	register_widget('ZtiAdWidget');
-	register_widget('ZtiAnalyticsWidget');
+//	register_widget('ZtiAnalyticsWidget');
 }
 add_action('widgets_init','zti_add_widgets')
 ?>

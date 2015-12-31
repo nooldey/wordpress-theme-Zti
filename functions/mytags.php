@@ -7,7 +7,7 @@
 		"number" => "30",
 		"orderby" => "count",
 		"order" => "DESC",
-
+		"show_count" => 1
 		);
 		return $args;
 		}
