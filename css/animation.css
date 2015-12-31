@@ -1,0 +1,93 @@
+.tips .fa-volume-up:before{
+	animation:spin 1s infinite linear;
+	-webkit-animation:spin 1s infinite linear;
+	-o-animation:spin 1s infinite linear;
+	-moz-animation:spin 1s infinite linear;
+}
+#gototop:hover{
+    animation:chandou 0.1s infinite linear;
+    -webkit-animation:chandou 0.1s infinite linear;
+    -moz-animation:chandou 0.1s infinite linear;
+    -o-animation:chandou 0.1s infinite linear;
+}
+/*封装的过渡效果*/
+.transition{
+	-webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+/*二维码渐显*/
+	@keyframes qropacity{
+		0% {opacity:0;}
+		25% {opacity:0.25;}
+		50% {opacity:0.5;}
+		75% {opacity:0.75;}
+		100% {opacity:1;}
+	}
+	@-webkit-keyframes qropacity{
+		0% {opacity:0;}
+		25% {opacity:0.25;}
+		50% {opacity:0.5;}
+		75% {opacity:0.75;}
+		100% {opacity:1;}
+	}
+	@-o-keyframes qropacity{
+		0% {opacity:0;}
+		25% {opacity:0.25;}
+		50% {opacity:0.5;}
+		75% {opacity:0.75;}
+		100% {opacity:1;}
+	}
+	@-moz-keyframes qropacity{
+		0% {opacity:0;}
+		25% {opacity:0.25;}
+		50% {opacity:0.5;}
+		75% {opacity:0.75;}
+		100% {opacity:1;}
+	}
+/*颤抖*/
+	@keyframes chandou
+	{
+	0%		{transform:rotateZ(-10deg);}
+	100%  	{transform:rotateZ(10deg);}
+	}
+	@-webkit-keyframes chandou
+	{
+	0%		{transform:rotateZ(-10deg);}
+	100%  	{transform:rotateZ(10deg);}
+	}
+	@-o-keyframes chandou
+	{
+	0%		{transform:rotateZ(-10deg);}
+	100%  	{transform:rotateZ(10deg);}
+	}
+	@-moz-keyframes chandou
+	{
+	0%		{transform:rotateZ(-10deg);}
+	100%  	{transform:rotateZ(10deg);}
+	}
+/*公告小喇叭*/
+	@keyframes spin
+	{
+	0%		{content: "\f026";}
+	50%     {content: "\f027";}
+	100%  	{content: "\f028";}
+	}
+	@-webkit-keyframes spin
+	{
+	0%		{content: "\f026";}
+	50%     {content: "\f027";}
+	100%  	{content: "\f028";}
+	}
+	@-moz-keyframes spin
+	{
+	0%		{content: "\f026";}
+	50%     {content: "\f027";}
+	100%  	{content: "\f028";}
+	}
+	@-o-keyframes spin
+	{
+	0%		{content: "\f026";}
+	50%     {content: "\f027";}
+	100%  	{content: "\f028";}
+	}
