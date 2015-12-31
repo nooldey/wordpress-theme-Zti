@@ -388,7 +388,7 @@ blockquote{
     padding: 1em;
 }
 .cms-title span.cms-cat {
-    background-color: #3DA4CD;
+    background-color: #5D686F;
     color: #FFFFFF;
     padding: 5px 8px;
 }
@@ -397,7 +397,7 @@ blockquote{
     display: inline-block;
     height: 1px;
     width: 1px;
-    border-color: #3DA4CD transparent transparent #3DA4CD;
+    border-color: #5D686F transparent transparent #5D686F;
     border-style: solid;
     border-width: 0.3em;
     padding: 0;
@@ -1195,7 +1195,7 @@ ul.theme-meta li:nth-child(2){
     border-bottom: 2px solid #E7E7E7;
 }
 #copyright{
-    background-color: #3DA4CD;
+    background-color: #5D686F;
     color: #F7F7F7;
     text-align: center;
     padding-top: 1.2em;
