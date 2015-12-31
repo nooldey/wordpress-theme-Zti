@@ -48,6 +48,5 @@ function zti_wp_meta() {
 	<meta name="keywords" content="<?php _e($keywords,'ZTI'); ?>" />
 	<meta name="description" content="<?php _e($description,'ZTI'); ?>" />
 	<link rel="shortcut icon" href="<?php bloginfo('url'); ?>/favicon.ico" type="image/x-icon" />
-	<base target="_blank">
 	<?php 
 } ?>

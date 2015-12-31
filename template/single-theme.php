@@ -10,9 +10,8 @@
 					</section>
 					<section class="col-md-8 theme-title">
 						<h2><?php the_title() ?></h2>
-						<p class="theme-word"><?php echo zti_theme_meta('zti_theme_word');?></p>
 						<div class="theme-price">
-							<dl><dt>促销信息</dt><dd>未找到活动信息，请关注主题介绍内容</dd></dl>
+							<dl><dt>促销信息</dt><dd class="theme-word"><?php _e(zti_theme_meta('zti_theme_word') ? zti_theme_meta('zti_theme_word') : "未找到活动信息，请关注主题介绍内容");?></dd></dl>
 							<dl><dt>主题价格</dt><dd><?php echo zti_theme_meta('price');?></dd></dl>
 							<dl><dt>购买说明</dt><dd>因源码的可复制性，虚拟物品交易后概不退款，如继续购买则表示同意本条规则</dd></dl>
 						</div>

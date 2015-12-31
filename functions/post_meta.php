@@ -7,7 +7,7 @@
 */
 	//创建自定义字段信息
 	$new_meta_boxes = array(
-		"zti_theme_word" => array("name" => "zti_theme_word","std" => "","title" => "广告词"),
+		"zti_theme_word" => array("name" => "zti_theme_word","std" => "","title" => "促销信息"),
 		"demo" => array("name" => "demo","std" => "","title" => "演示地址"),
 		"download" => array("name" => "download","std" => "","title" => "下载地址"),
 		"price" => array("name" => "price","std" => "0","title" => "主题售价"),

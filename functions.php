@@ -6,4 +6,4 @@
 foreach ( glob( get_template_directory() . '/functions/*.php' ) as $filename ) {
 	require $filename;
 }
-	require get_template_directory() . '/ajax-comment/do.php';
+	require get_template_directory() . '/ajax-comment/main.php';

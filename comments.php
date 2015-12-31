@@ -22,13 +22,13 @@ if ( post_password_required() ) {
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
-		<aside class="no-comments"><?php _e( '评论已关闭', 'zti' ); ?></aside>
+		<aside class="no-comments"><?php _e( '评论已关闭', 'ZTI' ); ?></aside>
 	<?php endif; ?>
-
+	<?php comment_form(); ?>
 	<?php if ( have_comments() ) : ?>
 		<h2 class="comments-title">
 			<?php
-				printf( _nx( 'One Comment', '%1$s Comments', get_comments_number(), 'comments title', 'zti' ),
+				printf( _nx( 'One Comment', '%1$s Comments', get_comments_number(), 'comments title', 'ZTI' ),
 					number_format_i18n( get_comments_number() ), get_the_title() );
 			?>
 		</h2>
@@ -46,5 +46,4 @@ if ( post_password_required() ) {
 			<?php paginate_comments_links(); ?>
 		</nav>
 	<?php endif; // have_comments() ?>
-	<?php comment_form(); ?>
 </div><!-- .comments-area -->

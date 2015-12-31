@@ -12,7 +12,7 @@
 			<a data-toggle="modal" data-target="#alipay-modal">赏</a>
 		</span>
 		<span class="post-share">
-			<a href="#"><i class="fa fa-share-alt"></i> 分享</a>
+			<a href="#comments"><i class="fa fa-comments"></i> 点评</a>
 		</span>
 	</div>
 </footer>
