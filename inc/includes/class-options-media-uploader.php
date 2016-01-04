@@ -106,12 +106,12 @@ class Options_Framework_Media_Uploader {
 
 		$menu = Options_Framework_Admin::menu_settings();
 
-        if ( substr( $hook, -strlen( $menu['menu_slug'] ) ) !== $menu['menu_slug'] )
+        if ( substr( $hook, -strlen( $menu['menu_slug'] ) ) !== $menu['menu_slug'] ){
 	        return;
-
-		if ( function_exists( 'wp_enqueue_media' ) )
+        }
+		if ( function_exists( 'wp_enqueue_media' ) ){
 			wp_enqueue_media();
-
+        }
 		wp_register_script( 'of-media-uploader', OPTIONS_FRAMEWORK_DIRECTORY .'js/media-uploader.js', array( 'jquery' ), Options_Framework::VERSION );
 		wp_enqueue_script( 'of-media-uploader' );
 		wp_localize_script( 'of-media-uploader', 'optionsframework_l10n', array(

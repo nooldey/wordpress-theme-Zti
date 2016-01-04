@@ -27,10 +27,20 @@
 					</article>
 					<nav id="post-navi" class="clearfix">
 						<div class="col-sm-6">
-							<?php if(get_previous_post()){ previous_post_link('%link','<i class="fa fa-arrow-left"></i> 上一篇'); }else{echo "没有上一篇";}; ?>
+							<?php if(get_previous_post()){
+								previous_post_link('%link','<i class="fa fa-arrow-left"></i> 上一篇');
+							}else{
+								echo "没有上一篇";
+							}
+							?>
 						</div>
 						<div class="col-sm-6 text-right">
-							<?php if(get_next_post()){ next_post_link('%link','下一篇 <i class="fa fa-arrow-right"></i>'); }else{echo "没有下一篇";}; ?>
+							<?php if(get_next_post()){
+								next_post_link('%link','下一篇 <i class="fa fa-arrow-right"></i>');
+							}else{
+								echo "没有下一篇";
+							}
+							?>
 						</div>
 					</nav>
 				<?php endwhile; endif;?>
