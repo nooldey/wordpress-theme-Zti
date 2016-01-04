@@ -17,7 +17,8 @@
 	//转化数字与单位 from BIGFA
 	function format_number($number) {
 	    if($number >= 1000) {
-	       return  number_format($number/1000,1) . "k";   // NB: you will want to round this
+	       return  number_format($number/1000,1) . "k";   
+	       // NB: you will want to round this
 	    }
 	    else {
 	        return $number;

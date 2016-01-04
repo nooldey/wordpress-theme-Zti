@@ -9,7 +9,8 @@
         if ( $action == 'zan'){
             $zti_raters = get_post_meta($id,'zti_zan',true);
             $expire = time() + 99999999;
-            $domain = ($_SERVER['HTTP_HOST'] != 'localhost') ? $_SERVER['HTTP_HOST'] : false; // make cookies work with localhost
+            $domain = ($_SERVER['HTTP_HOST'] != 'localhost') ? $_SERVER['HTTP_HOST'] : false; 
+            // make cookies work with localhost
             setcookie('zti_zan_'.$id,$id,$expire,'/',$domain,false);
             if (!$zti_raters || !is_numeric($zti_raters)) {
                 update_post_meta($id, 'zti_zan', 1);

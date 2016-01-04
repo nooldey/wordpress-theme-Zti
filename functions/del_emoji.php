@@ -34,14 +34,23 @@
 	function wpbeginner_remove_version(){
 		return;
 	}
-	add_filter('the_generator', 'wpbeginner_remove_version');//wordpress的版本号
-	remove_action('wp_head', 'feed_links', 2);//包含文章和评论的feed
-	remove_action('wp_head','index_rel_link');//当前文章的索引
-	remove_action('wp_head', 'feed_links_extra', 3);// 额外的feed,例如category, tag页
-	remove_action('wp_head', 'start_post_rel_link', 10, 0);// 开始篇 
-	remove_action('wp_head', 'parent_post_rel_link', 10, 0);// 父篇 
-	remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0); // 上、下篇. 
-	remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );//rel=pre
-	remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0 );//rel=shortlink 
+	add_filter('the_generator', 'wpbeginner_remove_version');
+	//wordpress的版本号
+	remove_action('wp_head', 'feed_links', 2);
+	//包含文章和评论的feed
+	remove_action('wp_head','index_rel_link');
+	//当前文章的索引
+	remove_action('wp_head', 'feed_links_extra', 3);
+	// 额外的feed,例如category, tag页
+	remove_action('wp_head', 'start_post_rel_link', 10, 0);
+	// 开始篇 
+	remove_action('wp_head', 'parent_post_rel_link', 10, 0);
+	// 父篇 
+	remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0); 
+	// 上、下篇. 
+	remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
+	//rel=pre
+	remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0 );
+	//rel=shortlink 
 	remove_action('wp_head', 'rel_canonical' );
 ?>

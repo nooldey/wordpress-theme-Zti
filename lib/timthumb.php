@@ -1,45 +1,45 @@
 <?php
 
 define ('VERSION','2.8');
-if( file_exists('timthumb-config.php'))         require_once('timthumb-config.php');
-if(!defined( 'DEBUG_ON') )                    define ('DEBUG_ON',false);
-if(!defined('DEBUG_LEVEL') )                   define ('DEBUG_LEVEL',1);
-if(!defined('MEMORY_LIMIT') )                  define ('MEMORY_LIMIT','30M');
-if(!defined('BLOCK_EXTERNAL_LEECHERS') )       define ('BLOCK_EXTERNAL_LEECHERS',false);
-if(!defined('ALLOW_EXTERNAL') )                define ('ALLOW_EXTERNAL',TRUE);
-if(!defined('ALLOW_ALL_EXTERNAL_SITES') )      define ('ALLOW_ALL_EXTERNAL_SITES',TRUE);
-if(!defined('FILE_CACHE_ENABLED') )            define ('FILE_CACHE_ENABLED',TRUE);
-if(!defined('FILE_CACHE_TIME_BETWEEN_CLEANS')) define ('FILE_CACHE_TIME_BETWEEN_CLEANS',86400);
-if(!defined('FILE_CACHE_MAX_FILE_AGE') )       define ('FILE_CACHE_MAX_FILE_AGE',86400);
-if(!defined('FILE_CACHE_SUFFIX') )             define ('FILE_CACHE_SUFFIX','.timthumb.txt');
-if(!defined('FILE_CACHE_DIRECTORY') )          define ('FILE_CACHE_DIRECTORY','./cache');
-if(!defined('MAX_FILE_SIZE') )                 define ('MAX_FILE_SIZE',10485760);
-if(!defined('CURL_TIMEOUT') )                  define ('CURL_TIMEOUT',20);
-if(!defined('WAIT_BETWEEN_FETCH_ERRORS') )     define ('WAIT_BETWEEN_FETCH_ERRORS',3600);
-if(!defined('BROWSER_CACHE_MAX_AGE') )         define ('BROWSER_CACHE_MAX_AGE',864000);
-if(!defined('BROWSER_CACHE_DISABLE') )         define ('BROWSER_CACHE_DISABLE',false);
-if(!defined('MAX_WIDTH') )                     define ('MAX_WIDTH',1500);
-if(!defined('MAX_HEIGHT') )                    define ('MAX_HEIGHT',1500);
-if(!defined('NOT_FOUND_IMAGE') )               define ('NOT_FOUND_IMAGE','');
-if(!defined('ERROR_IMAGE') )                   define ('ERROR_IMAGE','');
-if(!defined('OPTIPNG_ENABLED') )               define ('OPTIPNG_ENABLED',false);
-if(!defined('OPTIPNG_PATH') )                  define ('OPTIPNG_PATH','/usr/bin/optipng');
-if(!defined('PNGCRUSH_ENABLED') )              define ('PNGCRUSH_ENABLED',false);
-if(!defined('PNGCRUSH_PATH') )                 define ('PNGCRUSH_PATH','/usr/bin/pngcrush');
-if(!defined('WEBSHOT_ENABLED') )       define ('WEBSHOT_ENABLED',false);
-if(!defined('WEBSHOT_CUTYCAPT') )      define ('WEBSHOT_CUTYCAPT','/usr/local/bin/CutyCapt');
-if(!defined('WEBSHOT_XVFB') )          define ('WEBSHOT_XVFB','/usr/bin/xvfb-run');
-if(!defined('WEBSHOT_SCREEN_X') )      define ('WEBSHOT_SCREEN_X','1024');
-if(!defined('WEBSHOT_SCREEN_Y') )      define ('WEBSHOT_SCREEN_Y','768');
-if(!defined('WEBSHOT_COLOR_DEPTH') )   define ('WEBSHOT_COLOR_DEPTH','24');
-if(!defined('WEBSHOT_IMAGE_FORMAT') )  define ('WEBSHOT_IMAGE_FORMAT','png');
-if(!defined('WEBSHOT_TIMEOUT') )       define ('WEBSHOT_TIMEOUT','20');
-if(!defined('WEBSHOT_USER_AGENT') )    define ('WEBSHOT_USER_AGENT','Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.2.18) Gecko/20110614 Firefox/3.6.18');
-if(!defined('WEBSHOT_JAVASCRIPT_ON') ) define ('WEBSHOT_JAVASCRIPT_ON',true);
-if(!defined('WEBSHOT_JAVA_ON') )       define ('WEBSHOT_JAVA_ON',false);
-if(!defined('WEBSHOT_PLUGINS_ON') )    define ('WEBSHOT_PLUGINS_ON',true);
-if(!defined('WEBSHOT_PROXY') )         define ('WEBSHOT_PROXY','');
-if(!defined('WEBSHOT_XVFB_RUNNING') )  define ('WEBSHOT_XVFB_RUNNING',false);
+if( file_exists('timthumb-config.php')){       require_once('timthumb-config.php');}
+if(!defined( 'DEBUG_ON') ){                    define ('DEBUG_ON',false);}
+if(!defined('DEBUG_LEVEL') ){                  define ('DEBUG_LEVEL',1);}
+if(!defined('MEMORY_LIMIT') ){                 define ('MEMORY_LIMIT','30M');}
+if(!defined('BLOCK_EXTERNAL_LEECHERS') ){      define ('BLOCK_EXTERNAL_LEECHERS',false);}
+if(!defined('ALLOW_EXTERNAL') ){               define ('ALLOW_EXTERNAL',TRUE);}
+if(!defined('ALLOW_ALL_EXTERNAL_SITES') ){     define ('ALLOW_ALL_EXTERNAL_SITES',TRUE);}
+if(!defined('FILE_CACHE_ENABLED') ){           define ('FILE_CACHE_ENABLED',TRUE);}
+if(!defined('FILE_CACHE_TIME_BETWEEN_CLEANS')){define ('FILE_CACHE_TIME_BETWEEN_CLEANS',86400);}
+if(!defined('FILE_CACHE_MAX_FILE_AGE') ){      define ('FILE_CACHE_MAX_FILE_AGE',86400);}
+if(!defined('FILE_CACHE_SUFFIX') ){            define ('FILE_CACHE_SUFFIX','.timthumb.txt');}
+if(!defined('FILE_CACHE_DIRECTORY') ){         define ('FILE_CACHE_DIRECTORY','./cache');}
+if(!defined('MAX_FILE_SIZE') ){                define ('MAX_FILE_SIZE',10485760);}
+if(!defined('CURL_TIMEOUT') ){                 define ('CURL_TIMEOUT',20);}
+if(!defined('WAIT_BETWEEN_FETCH_ERRORS') ){    define ('WAIT_BETWEEN_FETCH_ERRORS',3600);}
+if(!defined('BROWSER_CACHE_MAX_AGE') ){        define ('BROWSER_CACHE_MAX_AGE',864000);}
+if(!defined('BROWSER_CACHE_DISABLE') ){        define ('BROWSER_CACHE_DISABLE',false);}
+if(!defined('MAX_WIDTH') ){                    define ('MAX_WIDTH',1500);}
+if(!defined('MAX_HEIGHT') ){                   define ('MAX_HEIGHT',1500);}
+if(!defined('NOT_FOUND_IMAGE') ){              define ('NOT_FOUND_IMAGE','');}
+if(!defined('ERROR_IMAGE') ){                  define ('ERROR_IMAGE','');}
+if(!defined('OPTIPNG_ENABLED') ){              define ('OPTIPNG_ENABLED',false);}
+if(!defined('OPTIPNG_PATH') ){                 define ('OPTIPNG_PATH','/usr/bin/optipng');}
+if(!defined('PNGCRUSH_ENABLED') ){             define ('PNGCRUSH_ENABLED',false);}
+if(!defined('PNGCRUSH_PATH') ){                define ('PNGCRUSH_PATH','/usr/bin/pngcrush');}
+if(!defined('WEBSHOT_ENABLED') ){      define ('WEBSHOT_ENABLED',false);}
+if(!defined('WEBSHOT_CUTYCAPT') ){     define ('WEBSHOT_CUTYCAPT','/usr/local/bin/CutyCapt');}
+if(!defined('WEBSHOT_XVFB') ){         define ('WEBSHOT_XVFB','/usr/bin/xvfb-run');}
+if(!defined('WEBSHOT_SCREEN_X') ){     define ('WEBSHOT_SCREEN_X','1024');}
+if(!defined('WEBSHOT_SCREEN_Y') ){     define ('WEBSHOT_SCREEN_Y','768');}
+if(!defined('WEBSHOT_COLOR_DEPTH') ){  define ('WEBSHOT_COLOR_DEPTH','24');}
+if(!defined('WEBSHOT_IMAGE_FORMAT') ){  define ('WEBSHOT_IMAGE_FORMAT','png');}
+if(!defined('WEBSHOT_TIMEOUT') ){       define ('WEBSHOT_TIMEOUT','20');}
+if(!defined('WEBSHOT_USER_AGENT') ){    define ('WEBSHOT_USER_AGENT','Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.2.18) Gecko/20110614 Firefox/3.6.18');}
+if(!defined('WEBSHOT_JAVASCRIPT_ON') ){ define ('WEBSHOT_JAVASCRIPT_ON',true);}
+if(!defined('WEBSHOT_JAVA_ON') ){       define ('WEBSHOT_JAVA_ON',false);}
+if(!defined('WEBSHOT_PLUGINS_ON') ){    define ('WEBSHOT_PLUGINS_ON',true);}
+if(!defined('WEBSHOT_PROXY') ){         define ('WEBSHOT_PROXY','');}
+if(!defined('WEBSHOT_XVFB_RUNNING') ){  define ('WEBSHOT_XVFB_RUNNING',false);}
 if(!isset($ALLOWED_SITES)){
 $ALLOWED_SITES = array (
 'flickr.com',

@@ -15,7 +15,7 @@
 			$title = get_the_title();
 			$url = get_permalink();
 			$viewnum = post_views($post->ID,$echo=false);
-			$output = "<li><i class='fa fa-chevron-circle-right'></i><a href='$url' title='$title'>$title</a><span class='pull-right'>$viewnum 次浏览</span></li>";
+			$output = "<li><i class='fa fa-chevron-circle-right'></i><a href='".$url."' title='".$title."'>".$title."</a><span class='pull-right'>".$viewnum." 次浏览</span></li>";
 	        echo $output;
     	}
     	wp_reset_postdata();

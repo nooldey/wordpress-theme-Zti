@@ -45,5 +45,5 @@ if ( post_password_required() ) {
 		<nav class="comments-nav">
 			<?php paginate_comments_links(); ?>
 		</nav>
-	<?php endif; // have_comments() ?>
+	<?php endif;?>
 </div><!-- .comments-area -->
