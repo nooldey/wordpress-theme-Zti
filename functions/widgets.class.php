@@ -11,7 +11,7 @@ class ZtiAdWidget extends WP_Widget{
 		$code = $instance['code'];
 
 		$content = $before_widget;
-		if ($title) $content .= $before_title.$title.$after_title;
+		if ($title){ $content .= $before_title.$title.$after_title;}
 		$content .= '<aside class="WidgetAd">';
 		
 		if (!empty($code)) {
@@ -29,7 +29,7 @@ class ZtiAdWidget extends WP_Widget{
         
 	}
 	function update($new_instance,$old_instance){
-		$instance = array();
+		$instance = $old_instance;
 		$instance['title'] = strip_tags($new_instance['title']);
 		$instance['code'] = $new_instance['code'];
 		return $instance;
@@ -56,18 +56,17 @@ class ZtiAnalyticsWidget extends WP_Widget{
 	function widget($args,$instance){
 		$data = array();
 		foreach ($instance as $type=>$value) {
-			if ($value!='on') continue;
+			if ($value!='on'){ continue;}
 			$list = zti_site_count($type);
-			if ( !empty($list) ) $data[$type] = $list;
+			if ( !empty($list) ){ $data[$type] = $list;}
 		}
-		if ( empty($data) ) return;
+		if ( empty($data) ){ return;}
 
 		extract($args);
 		$title = apply_filters('widgets_title',$instance['title']);
 
 		$content = $before_widget;
-		if ($title) 
-			$content .= $before_title.$title.$after_title;
+		if ($title) { $content .= $before_title.$title.$after_title;}
 		$content .= '<aside class="WidgetAnaly"><ul>';
 		
 		foreach ($data as $key) {
@@ -115,8 +114,8 @@ class ZtiAnalyticsWidget extends WP_Widget{
 				$output .= '" name="';
 				$output .= $this->get_field_name($key);
 				$output .= '"';
-				if( isset($instance[$key])&&trim($instance[$key])=='on' ) 
-					$output .='checked="checked"';
+				if( isset($instance[$key])&&trim($instance[$key])=='on' ){ 
+					$output .='checked="checked"';}
 				$output .= '><label for="';
 				$output .= $this->get_field_id($key);
 				$output .= '">';

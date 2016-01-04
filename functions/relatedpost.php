@@ -23,7 +23,7 @@
                 $title = get_the_title();
                 $url = get_permalink();
                 $output = "<li><i class='fa fa-chevron-circle-right'></i>
-                    <a href='$url' title='$title' target='_blank'>$title</a></li>";
+                    <a href='".$url."' title='".$title."' target='_blank'>".$title."</a></li>";
                 echo $output;
             }
             wp_reset_postdata();

@@ -5,8 +5,8 @@
  */
 class zti_bootstrap_navwalker extends Walker {
 
-  var $tree_type = array( 'post_type', 'taxonomy', 'custom' );
-  var $db_fields = array( 'parent' => 'menu_item_parent', 'id' => 'db_id' );
+  public $tree_type = array( 'post_type', 'taxonomy', 'custom' );
+  public $db_fields = array( 'parent' => 'menu_item_parent', 'id' => 'db_id' );
 
   function start_lvl( &$output, $depth = 0, $args = array() ) {
     if( $depth == 0 ){
@@ -17,7 +17,7 @@ class zti_bootstrap_navwalker extends Walker {
   }
 
   function end_lvl( &$output, $depth = 0, $args = array() ) {
-    if( $depth == 0 ) $output .= "</ul>";
+    if( $depth == 0 ){ $output .= "</ul>";}
   }
 
   function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
@@ -41,13 +41,13 @@ class zti_bootstrap_navwalker extends Walker {
         $class_name = esc_attr( $class_name );
         
         //~ 把第一个以 fa- 开头的自定义CSS类作为 fa 图标的类名
-        if ( strpos( $class_name , 'fa-' )!==false && empty($fa_icon) )
+        if ( strpos( $class_name , 'fa-' )!==false && empty($fa_icon) ){
           $fa_icon = '<i class="fa ' . $class_name . '"></i> ';
-        
+        }
         //~ 去除所有以 fa- 开头和名为 fa 的自定义CSS类
-        if ( strpos( $class_name , 'fa-' )===0 || $class_name=='fa' )
+        if ( strpos( $class_name , 'fa-' )===0 || $class_name=='fa' ){
           unset($class_names[$class_key]);
-
+        }
       }
     }
     
@@ -59,9 +59,9 @@ class zti_bootstrap_navwalker extends Walker {
       $caret = ' <span class="caret"></span></a>';
     }
     
-    if ( empty( $item->url ) && empty($atts['data-toggle']) )
+    if ( empty( $item->url ) && empty($atts['data-toggle']) ){
       $atts_class[] = 'navbar-text';
-
+    }
     if (
       $item->current 
   //    || $item->current_item_ancestor 

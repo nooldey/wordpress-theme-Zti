@@ -25,8 +25,9 @@
   		global $post, $new_meta_boxes;
   		foreach($new_meta_boxes as $meta_box) {
     		$meta_box_value = get_post_meta($post->ID, $meta_box['name'].'_value', true);
-    		if($meta_box_value == "")
-      		$meta_box_value = $meta_box['std'];
+    		if($meta_box_value == ""){
+      			$meta_box_value = $meta_box['std'];
+      		}
     		// 自定义字段标题
     		echo'<section style="width: 5em;padding: 5px;float: left;">'.$meta_box['title'].'：</section>';
     		// 自定义字段输入框
@@ -44,16 +45,16 @@
 	//保存自定义字段信息数据
 	function save_postdata( $post_id ) {
   		global $new_meta_boxes;
-		if ( !wp_verify_nonce( $_POST['zti_metaboxes_nonce'], plugin_basename(__FILE__) ))
-    		return;
-    	if ( !current_user_can( 'edit_posts', $post_id ))
-    		return;
+		if ( !wp_verify_nonce( $_POST['zti_metaboxes_nonce'], plugin_basename(__FILE__) )){
+    		return;}
+    	if ( !current_user_can( 'edit_posts', $post_id )){
+    		return;}
 		foreach($new_meta_boxes as $meta_box) {
     		$data = $_POST[$meta_box['name'].'_value'];
-    		if($data == "")
+    		if($data == ""){
       			delete_post_meta($post_id, $meta_box['name'].'_value', get_post_meta($post_id, $meta_box['name'].'_value', true));
-    		else
-      			update_post_meta($post_id, $meta_box['name'].'_value', $data);
+    		}else{
+      			update_post_meta($post_id, $meta_box['name'].'_value', $data);}
       	}
     }
     //绑定动作
@@ -106,7 +107,7 @@
 			$name = $key['name'];
 			$title = $key['title'];
 			$meta = zti_theme_meta($name);
-			$dt = "<dl><dt>$title</dt><dd>$meta</dd></dl>";
+			$dt = "<dl><dt>".$title."</dt><dd>".$meta."</dd></dl>";
 			echo $dt;
 		}
 	}
@@ -124,7 +125,7 @@
 			$name = $key['name'];
 			$title = $key['title'];
 			$meta = zti_theme_meta($name);
-			$dt = "<dl><dt>$title</dt><dd>$meta</dd></dl>";
+			$dt = "<dl><dt>".$title."</dt><dd>".$meta."</dd></dl>";
 			echo $dt;
 		}
 	}

@@ -44,7 +44,7 @@ function optionsframework_options() {
 
 /******开始设置主题选项内容*******/
     // If using image radio buttons, define a directory path
-	$imagepath =  get_template_directory_uri() . '/images/';
+	$imagepath =  get_template_directory_uri().'/images/';
 
 	$options = array();
 /***基本设置***/

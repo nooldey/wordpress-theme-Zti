@@ -72,7 +72,7 @@
         }
 
 	//设置gravatar头像
-		if( !zti_opt('zti_gra') || zti_opt('zti_gra') == 'none' ){
+		if( !zti_opt('zti_gra')||zti_opt('zti_gra') == 'none' ){
 		}else if( zti_opt('zti_gra') == 'ssl' ){
 		    add_filter('get_avatar', 'ssl_get_avatar');
 		}else if( zti_opt('zti_gra') == 'duoshuo' ){
@@ -120,8 +120,8 @@
 	//walker
 	function sti_get_current_page_url() {
 	  static $current_url; 	  
-	  if ( isset($current_url) )
-	    return $current_url;	  
+	  if ( isset($current_url) ){
+	    return $current_url;}	  
 	  $ssl = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? true : false;
 	  $sp = strtolower($_SERVER['SERVER_PROTOCOL']);
 	  $protocol = substr($sp, 0, strpos($sp, '/')) . (($ssl) ? 's' : '');
@@ -139,9 +139,9 @@
 		$desc = get_bloginfo('description');
 		if (zti_opt('zti_logo')) {
 			$imgurl = zti_opt('zti_logo');
-			$mylogo = "<div class='logo'><a href='$url' title='$desc' rel='home'><img alt='logo' src='$imgurl' /></a></div>";
+			$mylogo = "<div class='logo'><a href='".$url."' title='".$desc."' rel='home'><img alt='logo' src='".$imgurl."' /></a></div>";
 		}else{
-			$mylogo = "<div class='site-desc'><a href='$url' rel='home'>$name</a><h2>—— $desc</h2></div>";
+			$mylogo = "<div class='site-desc'><a href='".$url."' rel='home'>".$name."</a><h2>—— ".$desc."</h2></div>";
 		}
 		echo $mylogo;
 	}

@@ -10,8 +10,8 @@
  * the visitor has not yet entered the password we will
  * return early without loading the comments.
  */
-if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
-		die ('Please do not load this page directly!');
+if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME'])){
+		die ('Please do not load this page directly!');}
 if ( post_password_required() ) {
 	return;
 }

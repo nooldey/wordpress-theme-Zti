@@ -36,7 +36,7 @@
 			$cat = get_the_category();
 			$cat_name = get_cat_name($cat);
 			$date = get_post_time('Y-m-d',$echo=false);
-			$output = "<li><i class='fa fa-chevron-circle-right'></i><a href='$url' title='$title'> $title </a><span class='pull-right'>$date </span></li>";
+			$output = "<li><i class='fa fa-chevron-circle-right'></i><a href='".$url."' title='".$title."'> ".$title." </a><span class='pull-right'>".$date." </span></li>";
 	        echo $output;
     	}
     	wp_reset_postdata();
@@ -56,7 +56,7 @@
 			$title = get_the_title();
 			$url = get_permalink();
 			$commnum = $post->comment_count;
-			$output = "<li><i class='fa fa-chevron-circle-right'></i><a href='$url' title='$title'> $title </a><span class='pull-right'>$commnum 条评论</span></li>";
+			$output = "<li><i class='fa fa-chevron-circle-right'></i><a href='".$url."' title='".$title."'> ".$title." </a><span class='pull-right'>".$commnum." 条评论</span></li>";
 	        echo $output;
     	}
     	wp_reset_postdata();
@@ -77,7 +77,7 @@
 			$title = get_the_title();
 			$url = get_permalink();
 			$likenum = get_post_meta($post->ID,'zti_zan',true);
-			$output = "<li><i class='fa fa-chevron-circle-right'></i><a href='$url' title='$title'> $title </a><span class='pull-right'>$likenum 人点赞</span></li>";
+			$output = "<li><i class='fa fa-chevron-circle-right'></i><a href='".$url."' title='".$title."'> ".$title." </a><span class='pull-right'>".$likenum." 人点赞</span></li>";
 	        echo $output;
     	}
     	wp_reset_postdata();

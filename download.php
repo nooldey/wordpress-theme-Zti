@@ -2,9 +2,9 @@
 /**
  * Template Name: download
  */
-	if (!empty($_SERVER['SCRIPT_FILENAME']) && 'download.php' == basename($_SERVER['SCRIPT_FILENAME']))
+	if (!empty($_SERVER['SCRIPT_FILENAME']) && 'download.php' == basename($_SERVER['SCRIPT_FILENAME'])){
 		die ('Please do not load this page directly!');
-
+	}
 	if ($_GET['id'] != ''){
 		$id = $_GET['id'];
 		$url = get_post_meta($id, 'download_value', true);

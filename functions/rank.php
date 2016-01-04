@@ -3,7 +3,6 @@
 	function set_post_views() {
 	    global $post;
 	    $post_id = intval($post->ID);
-	    $count_key = 'views';
 	    $views = get_post_custom($post_id);
 	    $views = intval($views['views'][0]);
 	    if (is_single() || is_page()) {
@@ -27,7 +26,6 @@
 
 	//输出文章统计结果
 	function post_views($post_id, $echo=true) {
-	    $count_key = 'views';
 	    $views = get_post_custom($post_id);
 	    $views = intval($views['views'][0]);
 	    $post_views = intval(post_custom('views'));

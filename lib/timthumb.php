@@ -94,88 +94,88 @@ $tim->handleErrors();
 exit(0);
 }
 public function __construct(){
-global $ALLOWED_SITES;
-$this->startTime = microtime(true);
-date_default_timezone_set('UTC');
-$this->debug(1,'Starting new request from '.$this->getIP() .' to '.$_SERVER['REQUEST_URI']);
-$this->calcDocRoot();
-$this->salt = @filemtime(__FILE__) .'-'.@fileinode(__FILE__);
-$this->debug(3,'Salt is: '.$this->salt);
-if(FILE_CACHE_DIRECTORY){
-if(!is_dir(FILE_CACHE_DIRECTORY)){
-@mkdir(FILE_CACHE_DIRECTORY);
-if(!is_dir(FILE_CACHE_DIRECTORY)){
-$this->error('Could not create the file cache directory.');
-return false;
-}
-}
-$this->cacheDirectory = FILE_CACHE_DIRECTORY;
-if (!touch($this->cacheDirectory .'/index.html')) {
-$this->error('Could note create the index.html file.');
-}
-}else {
-$this->cacheDirectory = sys_get_temp_dir();
-}
-$this->cleanCache();
-$this->myHost = preg_replace('/^www\./i','',$_SERVER['HTTP_HOST']);
-$this->src = $this->param('src');
-$this->url = parse_url($this->src);
-if(strlen($this->src) <= 3){
-$this->error('No image specified');
-return false;
-}
-if(BLOCK_EXTERNAL_LEECHERS &&array_key_exists('HTTP_REFERER',$_SERVER) &&(!preg_match('/^https?:\/\/(?:www\.)?'.$this->myHost .'(?:$|\/)/i',$_SERVER['HTTP_REFERER']))){
-$imgData = base64_decode("R0lGODlhUAAMAIAAAP8AAP///yH5BAAHAP8ALAAAAABQAAwAAAJpjI+py+0Po5y0OgAMjjv01YUZ\nOGplhWXfNa6JCLnWkXplrcBmW+spbwvaVr/cDyg7IoFC2KbYVC2NQ5MQ4ZNao9Ynzjl9ScNYpneb\nDULB3RP6JuPuaGfuuV4fumf8PuvqFyhYtjdoeFgAADs=");
-header('Content-Type: image/gif');
-header('Content-Length: '.sizeof($imgData));
-header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
-header('Pragma: no-cache');
-header('Expires: '.gmdate ('D, d M Y H:i:s',time()));
-echo $imgData;
-return false;
-exit(0);
-}
-if(preg_match('/https?:\/\/(?:www\.)?'.$this->myHost .'(?:$|\/)/i',$this->src)){
-$this->src = preg_replace('/https?:\/\/(?:www\.)?'.$this->myHost .'/i','',$this->src);
-}
-if(preg_match('/^https?:\/\/[^\/]+/i',$this->src)){
-$this->debug(2,'Is a request for an external URL: '.$this->src);
-$this->isURL = true;
-}else {
-$this->debug(2,'Is a request for an internal file: '.$this->src);
-}
-if($this->isURL &&(!ALLOW_EXTERNAL)){
-$this->error('You are not allowed to fetch images from an external website.');
-return false;
-}
-if($this->isURL){
-if(ALLOW_ALL_EXTERNAL_SITES){
-$this->debug(2,'Fetching from all external sites is enabled.');
-}else {
-$this->debug(2,'Fetching only from selected external sites is enabled.');
-$allowed = false;
-foreach($ALLOWED_SITES as $site){
-if (preg_match ('/(?:^|\.)'.$site .'$/i',$this->url['host'])) {
-$this->debug(3,"URL hostname {$this->url['host']} matches $site so allowing.");
-$allowed = true;
-}
-}
-if(!$allowed){
-return $this->error("You may not fetch images from that site. To enable this site in timthumb, you can either add it to \$ALLOWED_SITES and set ALLOW_EXTERNAL=true. Or you can set ALLOW_ALL_EXTERNAL_SITES=true, depending on your security needs.");
-}
-}
-}
-$cachePrefix = ($this->isURL ?'timthumb_ext_': 'timthumb_int_');
-if($this->isURL){
-$this->cachefile = $this->cacheDirectory .'/'.$cachePrefix .md5($this->salt .$_SERVER ['QUERY_STRING'] .$this->fileCacheVersion) .FILE_CACHE_SUFFIX;
-}else {
-$this->localImage = $this->getLocalImagePath($this->src);
-if(!$this->localImage){
-$this->debug(1,"Could not find the local image: {$this->localImage}");
-$this->error('Could not find the internal image you specified.');
-$this->set404();
-return false;
-}
+	global $ALLOWED_SITES;
+	$this->startTime = microtime(true);
+	date_default_timezone_set('UTC');
+	$this->debug(1,'Starting new request from '.$this->getIP() .' to '.$_SERVER['REQUEST_URI']);
+	$this->calcDocRoot();
+	$this->salt = @filemtime(__FILE__) .'-'.@fileinode(__FILE__);
+	$this->debug(3,'Salt is: '.$this->salt);
+	if(FILE_CACHE_DIRECTORY){
+		if(!is_dir(FILE_CACHE_DIRECTORY)){
+			@mkdir(FILE_CACHE_DIRECTORY);
+			if(!is_dir(FILE_CACHE_DIRECTORY)){
+				$this->error('Could not create the file cache directory.');
+				return false;
+			}
+		}
+		$this->cacheDirectory = FILE_CACHE_DIRECTORY;
+		if (!touch($this->cacheDirectory .'/index.html')) {
+			$this->error('Could note create the index.html file.');
+		}
+	}else {
+		$this->cacheDirectory = sys_get_temp_dir();
+	}
+	$this->cleanCache();
+	$this->myHost = preg_replace('/^www\./i','',$_SERVER['HTTP_HOST']);
+	$this->src = $this->param('src');
+	$this->url = parse_url($this->src);
+	if(strlen($this->src) <= 3){
+		$this->error('No image specified');
+		return false;
+	}
+	if(BLOCK_EXTERNAL_LEECHERS &&array_key_exists('HTTP_REFERER',$_SERVER) &&(!preg_match('/^https?:\/\/(?:www\.)?'.$this->myHost .'(?:$|\/)/i',$_SERVER['HTTP_REFERER']))){
+		$imgData = base64_decode("R0lGODlhUAAMAIAAAP8AAP///yH5BAAHAP8ALAAAAABQAAwAAAJpjI+py+0Po5y0OgAMjjv01YUZ\nOGplhWXfNa6JCLnWkXplrcBmW+spbwvaVr/cDyg7IoFC2KbYVC2NQ5MQ4ZNao9Ynzjl9ScNYpneb\nDULB3RP6JuPuaGfuuV4fumf8PuvqFyhYtjdoeFgAADs=");
+		header('Content-Type: image/gif');
+		header('Content-Length: '.sizeof($imgData));
+		header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
+		header('Pragma: no-cache');
+		header('Expires: '.gmdate ('D, d M Y H:i:s',time()));
+		echo $imgData;
+		return false;
+		exit(0);
+	}
+	if(preg_match('/https?:\/\/(?:www\.)?'.$this->myHost .'(?:$|\/)/i',$this->src)){
+		$this->src = preg_replace('/https?:\/\/(?:www\.)?'.$this->myHost .'/i','',$this->src);
+	}
+	if(preg_match('/^https?:\/\/[^\/]+/i',$this->src)){
+		$this->debug(2,'Is a request for an external URL: '.$this->src);
+		$this->isURL = true;
+	}else {
+		$this->debug(2,'Is a request for an internal file: '.$this->src);
+	}
+	if($this->isURL &&(!ALLOW_EXTERNAL)){
+		$this->error('You are not allowed to fetch images from an external website.');
+		return false;
+	}
+	if($this->isURL){
+		if(ALLOW_ALL_EXTERNAL_SITES){
+			$this->debug(2,'Fetching from all external sites is enabled.');
+		}else {
+			$this->debug(2,'Fetching only from selected external sites is enabled.');
+			$allowed = false;
+			foreach($ALLOWED_SITES as $site){
+				if (preg_match ('/(?:^|\.)'.$site .'$/i',$this->url['host'])) {
+					$this->debug(3,"URL hostname {$this->url['host']} matches $site so allowing.");
+					$allowed = true;
+				}
+			}
+			if(!$allowed){
+				return $this->error("You may not fetch images from that site. To enable this site in timthumb, you can either add it to \$ALLOWED_SITES and set ALLOW_EXTERNAL=true. Or you can set ALLOW_ALL_EXTERNAL_SITES=true, depending on your security needs.");
+			}
+		}
+	}
+	$cachePrefix = ($this->isURL ?'timthumb_ext_': 'timthumb_int_');
+	if($this->isURL){
+		$this->cachefile = $this->cacheDirectory .'/'.$cachePrefix .md5($this->salt .$_SERVER ['QUERY_STRING'] .$this->fileCacheVersion) .FILE_CACHE_SUFFIX;
+	}else {
+		$this->localImage = $this->getLocalImagePath($this->src);
+		if(!$this->localImage){
+			$this->debug(1,"Could not find the local image: {$this->localImage}");
+			$this->error('Could not find the internal image you specified.');
+			$this->set404();
+			return false;
+		}
 $this->debug(1,"Local image path is {$this->localImage}");
 $this->localImageMTime = @filemtime($this->localImage);
 $this->cachefile = $this->cacheDirectory .'/'.$cachePrefix .md5($this->salt .$this->localImageMTime .$_SERVER ['QUERY_STRING'] .$this->fileCacheVersion) .FILE_CACHE_SUFFIX;
