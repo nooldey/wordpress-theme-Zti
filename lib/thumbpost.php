@@ -9,6 +9,9 @@
     	<aside class="thumbcard">
     		<div class="thumbcard-img">
     			<?php mythemes_thumbnail(350,320);?>
+          <section>
+
+          </section>
     		</div>
     		<div class="thumbcard-content">
     			<h3><?php echo mb_strimwidth(strip_tags(apply_filters('the_title',$post->post_title)),0,16," "); ?></h3>

@@ -5,10 +5,10 @@
 	-moz-animation:spin 1s infinite linear;
 }
 #gototop:hover{
-    animation:chandou 0.1s infinite linear;
-    -webkit-animation:chandou 0.1s infinite linear;
-    -moz-animation:chandou 0.1s infinite linear;
-    -o-animation:chandou 0.1s infinite linear;
+    animation:chandou 0.01s infinite linear;
+    -webkit-animation:chandou 0.01s infinite linear;
+    -moz-animation:chandou 0.01s infinite linear;
+    -o-animation:chandou 0.01s infinite linear;
 }
 /*封装的过渡效果*/
 .transition{
@@ -48,23 +48,35 @@
 /*颤抖*/
 	@keyframes chandou
 	{
-	0%		{transform:rotateZ(-10deg);}
-	100%  	{transform:rotateZ(10deg);}
+	0%		{transform:rotateZ(0deg);}
+	25%		{transform:rotateZ(-10deg);}
+	50%		{transform:rotateZ(0deg);}
+	75%  	{transform:rotateZ(10deg);}
+	100%		{transform:rotateZ(0deg);}
 	}
 	@-webkit-keyframes chandou
 	{
-	0%		{transform:rotateZ(-10deg);}
-	100%  	{transform:rotateZ(10deg);}
+	0%		{transform:rotateZ(0deg);}
+	25%		{transform:rotateZ(-10deg);}
+	50%		{transform:rotateZ(0deg);}
+	75%  	{transform:rotateZ(10deg);}
+	100%		{transform:rotateZ(0deg);}
 	}
 	@-o-keyframes chandou
 	{
-	0%		{transform:rotateZ(-10deg);}
-	100%  	{transform:rotateZ(10deg);}
+	0%		{transform:rotateZ(0deg);}
+	25%		{transform:rotateZ(-10deg);}
+	50%		{transform:rotateZ(0deg);}
+	75%  	{transform:rotateZ(10deg);}
+	100%		{transform:rotateZ(0deg);}
 	}
 	@-moz-keyframes chandou
 	{
-	0%		{transform:rotateZ(-10deg);}
-	100%  	{transform:rotateZ(10deg);}
+	0%		{transform:rotateZ(0deg);}
+	25%		{transform:rotateZ(-10deg);}
+	50%		{transform:rotateZ(0deg);}
+	75%  	{transform:rotateZ(10deg);}
+	100%		{transform:rotateZ(0deg);}
 	}
 /*公告小喇叭*/
 	@keyframes spin

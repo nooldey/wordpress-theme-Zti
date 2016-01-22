@@ -111,22 +111,4 @@
 			echo $dt;
 		}
 	}
-	function zti_theme_tags_short(){
-		global $post,$new_meta_boxes;
-			$keys = array(
-				'zti_coder',
-				'zti_renew',
-				'zti_release',
-				'zti_wp_ver',
-				'zti_response'
-			);
-		foreach ($keys as $key) {
-			$key = $new_meta_boxes[$key];
-			$name = $key['name'];
-			$title = $key['title'];
-			$meta = zti_theme_meta($name);
-			$dt = "<dl><dt>".$title."</dt><dd>".$meta."</dd></dl>";
-			echo $dt;
-		}
-	}
 ?>
