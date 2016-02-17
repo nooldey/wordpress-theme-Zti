@@ -1209,7 +1209,7 @@ ul.theme-meta li:nth-child(2){
 .footbar{
     padding:0.8em 0;
 }
-.widget-heading a,.widget-heading{
+.widget-heading{
     color: #353535;
     padding-bottom: 0.6em;
     border-bottom: 2px solid #E7E7E7;
